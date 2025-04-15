@@ -44,12 +44,18 @@ musica.addEventListener('timeupdate', atualizarBarra)
 //Ao clicar no botão de próximo, o índice da música é incrementado e a função renderizar() é chamada para carregar a próxima música.
 setaNext.addEventListener('click', () => {
     indexMusicas ++ 
+    if(indexMusicas > 2){
+        indexMusicas = 0
+    }
     renderizar(indexMusicas)
 })
 
 //Música Anterior: Ao clicar no botão de anterior, o índice da música é decrementado e a função renderizar() é chamada para carregar a música anterior.
 setaPrevious.addEventListener('click', () =>{
     indexMusicas --
+    if(indexMusicas < 0){
+        indexMusicas = 2
+    }
     renderizar(indexMusicas)
     
 })
