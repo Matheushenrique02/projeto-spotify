@@ -23,6 +23,8 @@ let setaPrevious = document.querySelector('#previous')
 //Variável que mantém o índice da música atual no array.
 let indexMusicas = 0
 
+
+
 //Função chamada para renderizar a música inicial (a música no índice 0).
 renderizar(indexMusicas)
 
@@ -49,7 +51,7 @@ setaNext.addEventListener('click', () => {
 setaPrevious.addEventListener('click', () =>{
     indexMusicas --
     renderizar(indexMusicas)
-
+    
 })
 
 
@@ -92,15 +94,31 @@ function converter(segundos){
 //Quando os dados estão carregados (loadeddata), o título da música, o nome do artista e a imagem de fundo são atualizados na interface.
 //O tempo final da música é mostrado na interface após a duração da música ser carregada.
 function renderizar(index){
+    const estavaTocando = !musica.paused
     musica.setAttribute('src', musicas[index].src)
     musica.addEventListener('loadeddata',() =>{
         music.textContent = musicas[index].titulo
         artista.textContent = musicas[index].artista
         img.style.backgroundImage = `url(${musicas[index].img})`
         tempoFinal.textContent = converter(Math.floor(musica.duration))
+    
+        if (estavaTocando) {
+            musica.play();
+            play.style.display = 'none';
+            buttonPause.style.display = 'block';
+        } else {
+            musica.pause();
+            play.style.display = 'block';
+            buttonPause.style.display = 'none';
+        }
+    }, { once: true });
+    
+    }
+    
+    
 
-    })
-}
+
+
 
 
 
