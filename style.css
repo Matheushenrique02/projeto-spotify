@@ -1,0 +1,101 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+    color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+#img{
+    background-image: url('imagens/rock.jpg');
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+}
+
+#descricao{
+    width: 300px;
+    margin-top: 10px;
+}
+
+#descricao h2{
+    margin: 0px;
+}
+
+#descricao p{
+    margin-top:5px;
+}
+
+
+#duracao{
+    width: 300px;
+    margin-top:25px;
+}
+
+#barra{
+    width: 300px;
+    height: 6px;
+    border:1px solid whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+progress{
+    height: 6px;
+    width: 0px;
+    background-color: #333;
+}
+
+#ponto{
+    
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    margin-left: -10px;
+}
+
+#tempo{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    
+}
+
+#play , #pause{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#play:hover,#pause:hover,#next:hover,#previous:hover{
+    color: gray;
+    transition: .5s;
+}
+
+#next, #previous{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#player{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+#pause{
+    display: none;
+}
